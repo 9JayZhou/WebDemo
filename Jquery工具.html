@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./wenjain/jquery.min.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+   <div class="box">
+       <ul>
+           <li>1</li>
+           <li>2</li>
+           <li>3</li>
+       </ul>
+   </div>
+    <script>
+    $(function(){
+        // extend 扩展对象 extend为返回的新对象
+        let extend={};
+        let extend1={name:'A',age:19};
+        let extend2={name:'C',age:25};
+        let seeting=jQuery.extend(extend,extend1,extend2)
+        console.log('object :', seeting);
+        //grep 过滤数组
+        let arr=[6,12,56,1,2,21,6,21];
+       let filter=$.grep(arr,function(n,i){
+            return n<10
+            // true 返回被过滤的值 false 返回过滤之后的的
+        },false)
+        console.log('filter :', filter);
+        // toArray 将Dom元素恢复成一个数组
+       let Array1=$("ul li").toArray()
+       console.log('Array1 :', Array1);
+    })
+    </script>
+</body>
+</html>

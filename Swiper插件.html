@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./idangerous.swiper.min.js"></script>
+    <script src="./jquery-1.9.1.min.js"></script>
+    <style>
+    .swiper-slide{
+        width: 100%;
+        height: 500px;
+        border: 1px solid pink;
+        overflow: hidden;
+    }
+    /* .datashow{
+        display: none;
+    } */
+    </style>
+    
+</head>
+<body>
+    <h1>Swiper插件</h1>
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <div class="datashow">
+                 QWER
+              </div>
+          </div>
+          <div class="swiper-slide">
+              <div class="datashow">
+                ZXC
+              </div>
+          </div>
+          <div class="swiper-slide">
+              <div class="datashow">
+                 ASDF
+              </div>
+          </div>
+      </div>
+  </div>
+    <script>
+     var mySwiper = new Swiper('.swiper-container',{
+     mode: 'vertical', // 垂直切换选项
+     onSlideChangeStart: function () {
+         console.log('122121 :', 122121);
+        //  $(".swiper-slide").eq(mySwiper.activeIndex).find(".datashow").show();
+     },
+     onSlideChangeEnd: function () {
+         console.log('99898 :', 99898);
+     },
+
+     })
+     </script>
+</body>
+</html>

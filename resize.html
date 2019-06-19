@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h5></h5>
+    <script src="./wenjain/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $(window).resize(function(){
+              let wdith=$(document).width();
+              let height=$(document).height();
+              let innerWidth=$(document).innerWidth();
+              let innerHeight=$(document).innerHeight();
+              let outerWidth=$(document).outerWidth();
+              let outerHeight=$(document).outerHeight();
+              let dpr=window.devicePixelRatio;
+              console.log('元素大小 :', wdith,height);
+              console.log('元素的内部区域大小 :', innerWidth,innerHeight);
+              console.log('元素的外部区域大小 :', outerWidth,outerHeight);
+              console.log('获取设备像素比 :', dpr);
+        })
+    })
+    </script>
+</body>
+</html>

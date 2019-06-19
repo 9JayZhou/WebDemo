@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./wenjain/jquery.min.js"></script>
+    <style>
+    .box{
+        width: 200px;
+        height: 200px;
+        border: 1px solid pink;
+        /* -------------------------------------- */
+               /*  名称  持续时间    过渡类型     延迟时间   循环次数      反向?    动画播放之外的状态 */
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">Hello World</div>
+    <input class="btn" type="button" value="确定">
+    <script>
+        $(function(){
+            $(".btn").click(function (e) {
+                // toggle() 切换显示隐藏
+                // slideUp slideDown slideToggle 滑动
+                // fadeIn fadeOut fadeToggle 透明度 fadeTo调整透明度 fadeTo(500,0.1)
+                // animate 动画 animate({transform:'rotate(180deg)',}, 1000 );
+                // stop() 立即完成动画
+                $(".box").animate({
+                    opacity:'0.3',
+                },1000)
+            });
+        })
+        </script>
+</body>
+</html>

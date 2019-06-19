@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./wenjain/jquery.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        123
+    </div>
+    <script>
+        $(function () {
+            // 设置 获取css的样式
+            $(".box").css('color', 'pink')
+            $(".box").css({
+                'font-size': '16px',
+                'height': '300px'
+            })
+            // 获取元素相对于可见区域的偏移量
+            let offset = $(".box").offset();
+            console.log('object :', offset.left + ' ' + offset.top);
+            // 获取匹配元素相对于父元素的偏移量
+            let position = $(".box").position();
+            console.log('object :', position.left + ' ' + position.top);
+            // 匹配元素相对于滚动条顶部偏移 (scrollTop)
+            let scrollTop1 = $(".box").scrollTop();
+            let scrollTop2 = $(".box").scrollTop(300);
+            //   设置 获取元素的宽高
+            let width1 = $("box").width;
+            let width2 = $("box").width(200);
+            let height1 = $("box").height;
+            let height2 = $("box").height(200);
+            //  获取元素内部区域宽度,不包括边框(innerHeight)
+            let innerWidth = $(".box").innerWidth();
+            let innerHeight = $(".box").innerHeight();
+            // 获取元素内部区域宽度,不包括边框(innerHeight)
+            let outerWidth = $(".box").outerWidth();
+            let outerHeight = $(".box").outerHeight();
+            console.log('1 :', outerHeight);
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <h3 class="start" style="color:orchid"></h3>
+     <h3 class="plus" style="color:orchid"></h3>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+    function SetTime(){
+    // <!-- 获取当前时间 -->
+    let startTime=new Date();
+    let Year=startTime.getFullYear(); //年
+    let Month=startTime.getMonth()+1;   //月
+    let Day=startTime.getDate();      //日
+    let Hour=startTime.getHours();    //时
+    let Min=startTime.getMinutes();   //分
+    let Sen=startTime.getSeconds();   //秒
+    let Week=startTime.getDay()       //星期
+    // <!-- 结束的时间 -->
+    let end="2019-05-21 16:06:00"
+    let endTime=new Date(end);
+    // <!-- 相减,剩下的时间 -->
+        let plus=endTime-startTime;
+        plus-=1000;
+        console.log('plus :', plus);
+        var plusDay = parseInt(plus / 1000 / 60 / 60 / 24);
+        var plusHour = parseInt(plus / 1000 / 60 / 60) - plusDay * 24;
+        var plusMin = parseInt(plus / 1000 / 60) - parseInt(plus / 1000 / 60 / 60) * 60;
+        var plusSen = parseInt(plus / 1000) - parseInt(plus / 1000 / 60) * 60;
+    // 美化
+       function ZerTime(i) {
+       if (i < 10) { i="0" + i; } return i; }
+       Month=ZerTime(Month);
+       Day=ZerTime(Day);
+       Hour=ZerTime(Hour);
+       Min=ZerTime(Min);
+       Sen=ZerTime(Sen);
+
+       plusDay = ZerTime(plusDay);
+       plusHour = ZerTime(plusHour);
+       plusMin = ZerTime(plusMin);
+       plusSen = ZerTime(plusSen);
+
+       let WeekDay;
+       switch(Week){
+           case 0:WeekDay="星期天";break; 
+            case 1:WeekDay="星期一";break;
+             case 2:WeekDay="星期二";break;
+              case 3:WeekDay="星期三";break;
+               case 4:WeekDay="星期四";break;
+                case 5:WeekDay="星期五";break;
+                 case 6:WeekDay="星期六";break;
+       }
+       if(plus<0){
+           clearInterval(Time);
+           alert("倒计时结束")
+       }
+       
+        // 展示
+    //    console.log('object :', Year + "-" + Month + "-" + Day + " " + Hour + ":" + Min + ":" + Sen +" " +WeekDay);
+       $(".start").html(Year + "-" + Month + "-" + Day + " " + Hour + ":" + Min + ":" + Sen +" " +WeekDay)
+    //    console.log('时间 :', plusDay + "天" + plusHour + "时" + plusMin + "分" + plusSen + "秒");
+       $(".plus").html(plusDay + "天" + plusHour + "时" + plusMin + "分" + plusSen + "秒")
+    }
+       let Time=setInterval(SetTime,1000)
+    </script>
+</body>
+</html>

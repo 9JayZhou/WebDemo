@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+        $("ul li").each(function (i) {
+            let _this = $(this);
+            _this.click(function () {
+                _this.hide()
+            })
+            console.log('i :', i);
+            console.log('this :', this);
+        })
+        //  slice
+        let li = $("ul li").slice(1, 4);
+        li.css({
+            'color': 'red'
+        });
+    </script>
+</body>
+
+</html>

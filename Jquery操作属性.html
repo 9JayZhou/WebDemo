@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./wenjain/jquery.min.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="">
+           
+        </form>
+    </div>
+    <script>
+    $(function(){
+        // 设置或返回属性
+        $(".box").attr({'id':'divbox','name':'box'})
+        //删除属性
+        $(".box").removeAttr("name")
+        // 获取属性值
+        $(".box").prop("id")
+        // 删除由prop方法创建的属性值
+        $("box").removeProp("name")
+        // addClass removeClass toggleClass
+        //设置html内容
+        $(".box").html("<p>HTML添加的</p>")
+        // 设置内容的文本
+        $(".box").text("<p>Box</p>")
+        // 获取表单的值 val()
+    })
+    </script>
+</body>
+</html>

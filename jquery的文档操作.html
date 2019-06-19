@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="./wenjain/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        123
+    </div>
+    <div class="box1">
+        <b>Box1</b>
+    </div>
+    <script>
+    $(function(){
+        // --------内-
+        // 追加
+        $(".box").append("<p>append追加的文本</p>")
+        //在前面追加
+        $(".box").prepend("<p>在123前面插入段落</p>")
+        // ----------外--
+        // 匹配元素之后插入
+            // $(".box").insertAfter(".box1")  多个
+        $(".box").after("<b>匹配元素外后插入段落</b>")
+        // 匹配元素之前插入
+            // $(".box").insertBefore(".box1") 多个
+        $(".box").before("<b>匹配元素外前插入段落</b>")
+        // 将匹配元素有标签包裹起来
+            // wrapInner 选中指定段落的子元素
+        $(".box").wrap("<h5></h5>")
+        // 删除段落子元素
+        $(".box1").empty();
+        // 删除元素
+        $(".box1").remove()
+
+
+    })
+    </script>
+</body>
+</html>

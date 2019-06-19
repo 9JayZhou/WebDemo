@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./wenjain/jquery.min.js"></script>
+    <style>
+    .active{
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script>
+    $(function(){
+        //first() last() 选中第一个 最后一个
+        //HasClass() 是否包含某个类
+        //eq() 获取指定的索引,从零开始
+        $("ul li").click(function(){
+            let index=$(this).index();
+            $("ul li").eq(index).addClass("active")
+        })
+        // 筛选器 filter
+        $("ul li").filter(":odd").hide();
+        //is() 是否含有
+        $("ul").parent().is(".box")  // true
+        //map() 将一组元素转换为数组
+       
+       let arr=$("ul li").map(function(){
+           return $(this).text()
+       }).get().join(",")
+       //Has 筛选包含指定后代的元素
+       $("ul li").has(".active")
+       //slice选取匹配的子集
+       let slice=$("ul li").slice(0,2);
+       console.log('slice :', slice);
+       //查找指定元素的子元素(直接)
+       $("ul li").children();
+       //find 找出特定的表达式
+       let pren=$("ul").prev();
+       console.log('pren :', pren);
+
+
+    })
+    </script>
+</body>
+</html>

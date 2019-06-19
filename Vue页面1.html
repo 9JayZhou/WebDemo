@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box"></div>
+<img src="" aria-placeholder="" alt="">
+
+    <script type="text/javascript">
+        let box = document.getElementsByClassName("box")[0]
+        console.log('body :', box);
+        box.innerHTML = "<h2>你好</h2>"
+        let car = {
+            index: 0,
+            name: "大众",
+            careq: function () {
+                return this.index + " " + this.name;
+            }
+        }
+        console.log(car.careq());
+
+        let str = "I im English Explore Souce"
+        let index1 = str.indexOf("Souce")
+        let index2 = str.substring(5, 13)
+        let index3 = str.replace("im", "Hello")
+        let index4 = str.concat(" - " + index3)
+        let unicode = str.charCodeAt(0);
+        let Arr = str.split(" ")
+        for (let i = 0; i < Arr.length; i++) {
+            console.log('object :', i + '-' + Arr[i]);
+        }
+        console.log('index1 :', Arr);
+
+        let Num = 9.264254;
+        let num1 = Num.toFixed(2);
+        let strnum = Num.valueOf()
+        let Romdom = parseInt(Math.random() * 10 + 1);
+        console.log('num1 :', Romdom);
+        let d = new Date();
+        let _year = d.getFullYear();
+        let _month = d.getMonth() + 1;
+        let _day = d.getDate();
+        let _xinqi = d.getDay()
+        console.log('d :', _year + '年' + _month + '月' + _day + '日' + '星期' + _xinqi);
+
+        
+    </script>
+</body>
+
+</html>

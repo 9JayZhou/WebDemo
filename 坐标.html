@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li class="page"></li>
+    <li class="target"></li>
+</ul>
+<input type="search" name="" id="">
+</div>
+
+<div class="inser"></div>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>J</kbd>
+<script src="wenjain/jquery.min.js"></script>
+<script>
+    $("ul").wrap('<div class="box"></div>')
+    let li = $("ul li").map(function () {
+        return $(this).text();
+    }).get().join();
+    console.log(typeof li)
+    $(document).bind('mousemove', function (e) {
+        $(".page").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+    });
+    $("body").click(function (event) {
+        $(".target").html("clicked: " + event.target.nodeName);
+    });
+    /*
+    innerwidth  : 内部宽度;
+    width : 宽度
+    outerwidth  :外部宽度
+    */
+
+    /*
+    eq  index:从0开始
+    */
+</script>
+</body>
+</html>

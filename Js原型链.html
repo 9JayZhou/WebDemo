@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 动物类
+        function Animal(){
+        this.eat=function(){
+        console.log('动物类 :', '动物类');
+        }
+        }
+        // dog
+        function Dog(){
+        this.bark=function(){
+        console.log('犬类 :', '犬类');
+        }
+        }
+        // Dog的原型继承Animal
+        Dog.prototype=new Animal();
+        // 实例化一个
+        let Samoye=new Animal();
+        console.log('object :', Samoye);
+  
+//   -----------
+function person(name,age,sex){
+    this.name=name;
+    this.age=age;
+    this.sex=sex;
+    this.sayname=function(){
+        console.log(this.name+' '+this.age+'  '+this.sex);
+    }
+}
+// person由原型函数建立 person._proto_=function.prototype
+let person1=new person('小明',13,'男')
+  // __proto__ 用于指向创建它的构造函数的原型对象(指向原型对象)。
+  bool=person1.__proto__ == person.prototype
+  console.log('bool :', bool); //true
+
+//   原型链的使用
+function subType(name){
+    this.name=name;
+}
+subType.prototype,getname=function(){
+    console.log(this.name);
+}
+
+function supType(age){
+    this.age=age;
+}
+supType.prototype=new subType();
+let supType1=new supType("XXX")
+supType1.getname();
+
+    //  凡是通过 new function为函数对象(function),其他为普通对象(object)
+    // 每个对象都有 __proto__ 属性，但只有函数对象才有 prototype 属性 原型对象是一个普通对象
+    // 实例的构造函数属性（constructor）指向构造函数。
+    </script>
+</body>
+</html>

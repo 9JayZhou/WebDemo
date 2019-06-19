@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="demo"></div>
+    <input type="button" value="+1">
+    <script src="./jquery.min.js"></script>
+    <script>
+        let number = (function () {
+            let count = 1;
+            return function () {
+                return count += 1;
+            }
+        })();
+        $("input[type*=button]").click(function () {
+            number.count==9;
+            $(".demo").html(number);
+            
+        })
+
+        // ---------------
+        function f1(){
+            let n=99;
+            add=function(){n+=1}
+            function f2(){
+                console.log(n);
+            }
+            return f2;
+        }
+        let result=f1();
+        result()
+        add()
+        result();
+
+
+        //--------------闭包运行机制
+        // 　var name = "The Window";
+        // 　　var object = {
+        // 　　　　name : "My Object",
+        // 　　　　getNameFunc : function(){
+        //     let that=this
+        // 　　　　　　return function(){
+        // 　　　　　　　　return that.name;
+        // 　　　　　　};
+
+        // 　　　　}
+
+        // 　　};
+
+       
+    </script>
+</body>
+
+</html>

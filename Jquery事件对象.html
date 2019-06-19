@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./wenjain/jquery.min.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">qingbox</div>
+    <div class="page"></div>
+    <input class="reset" type="reset" value="阻止默认事件">
+    <script>
+        $(function(){
+            /*
+            e.pageX :获取鼠标X轴的位置
+            e.pageY :获取鼠标y轴的位置
+            */
+            // 获取鼠标相对与屏幕左上角的位置
+            $(document).bind('mousemove',function(e){
+            $(".page").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+            });
+            // 阻止默认事件
+             $("reset").click(function(e) {
+               e.preventDefault();
+             });
+          
+        })
+        </script>
+</body>
+</html>

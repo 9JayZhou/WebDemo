@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 50%;
+        height: 450px;
+        border: 1px solid pink;
+        margin: 0 auto;
+        /* 字体怎样换行 pre pre-wrap 不合并空白 换行 
+                       nowrap pre-line 合并空白 不换行
+                       */
+        white-space: pre-line;
+        /* 全字符允许换行 */
+        word-break:break-all;
+        /* 允许在容器内部换行,可以断开单词 */
+        word-wrap:break-word;
+        /* 内联或 table-cell  父级元素设置 display:table*/
+        display: table-cell;
+        vertical-align:middle;
+            /*
+            sub：把当前盒的基线降低到合适的位置作为父级盒的下标（该值不影响该元素文本的字体大小）
+            super： 把当前盒的基线提升到合适的位置作为父级盒的上标（该值不影响该元素文本的字体大小）
+            text-top：把当前盒的top和父级的内容区的top对齐
+            text-bottom：把当前盒的bottom和父级的内容区的bottom对齐
+            middle：把当前盒的垂直中心和父级盒的基线加上父级的半x-height对齐
+            top：把当前盒的top与行盒的top对齐
+            bottom：把当前盒的bottom与行盒的bottom对齐
+            */
+            /*      x   y   模糊  颜色 */
+        text-shadow:5px 5px 2px pink;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Hello 你好 Hello 你好 Hello 你好, Hello你好Hello你好Hello你好Hello你好Hello你好Hello你好Hello你好
+        Hello你好Hello你好Hello你好.Hello你好Hello你好Hello你好Hello你好?Hello你好Hello你好
+    </div>
+</body>
+</html>

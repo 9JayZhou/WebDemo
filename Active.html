@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="./wenjain/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      .box {
+        width: 80%;
+        height: 100px;
+        margin: 0 auto;
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        float: left;
+        width: 100px;
+        height: 75px;
+        border: 1px solid green;
+        text-align: center;
+        line-height: 75px;
+        font-size: 18px;
+        border-left: none;
+      }
+      li:first-child {
+        border-left: 1px solid green;
+      }
+      .active {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li>首页</li>
+        <li>WilF</li>
+        <li>数据</li>
+        <li>静音</li>
+        <li>手电</li>
+      </ul>
+    </div>
+    <!-- --------------------------------- -->
+    <div class="box1">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+    </div>
+    <div class="box2">
+      <input class="inputbox" type="text" name="姓名" placeholder="请输入" />
+    </div>
+    <script>
+      // active
+      $("ul li").click(function() {
+        let index = $(this).index();
+        $("ul li")
+          .eq(index)
+          .addClass("active")
+          .siblings()
+          .removeClass("active");
+      });
+      //each
+      $(".box1 ul li").each(function() {
+        $(this)
+          .before()
+          .html("<a href='http://www.baidu.com'>点击</a>");
+        $(this).hover(
+          function() {
+            $(".box1 ul li").css("background", "pink");
+          },
+          function() {
+            $(".box1 ul li").css("background", "white");
+          }
+        );
+      });
+      //prop
+      let a = $(".inputbox").prop(function(i, val) {
+        return val == "Hello World";
+      });
+      console.log("a :", a);
+    </script>
+  </body>
+</html>

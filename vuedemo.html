@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="(item,index) in list" :key="index">{{item}}---{{index}}</li>
+        </ul>
+        <h3>{{msg}}</h3>
+        <!-- :bind绑定 -->
+        <img :src=img>
+        <h3 v-if="Bool">显示的值V-if</h3>
+        <h3 v-else>隐藏的值V-else</h3>
+        <button @click="Vbool">点击</button>
+        <test-component id="testComponent">
+            <div>
+                <form action="">
+                    <input type="text" placeholder="姓名">
+                    <input type="text" placeholder="OKKOKO">
+                </form>
+            </div>
+        </test-component>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+        // 创建模板
+        Vue.component('test-component', {
+            template: '#testComponent'
+        }),  
+        //    自定义指令
+        Vue.directive('focus', {
+            //inseted 钩子函数
+            inserted: function (el) {
+                el.focus()
+                // 调用
+                // v-focus;
+            }
+        })
+        // 
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                list: ['qwqqw', 'wqeqqe', 'ewewq'],
+                msg: "Hello vue I me Home",
+                img: './wenjain/01.jpg',
+                Bool: true,
+            },
+            methods: {
+                // 显示隐藏值
+                Vbool: function () {
+                    this.Bool = !this.Bool;
+                },
+            },
+            computed: {
+
+            },
+            directive:{
+
+            },
+            wacth:{
+                count:function(){
+
+                },
+            },
+
+        })
+    </script>
+</body>
+
+</html>
