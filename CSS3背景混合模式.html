@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        background-color: #fff;
+        margin: 0 auto;
+    }
+ 
+    .container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 100px auto;
+    }
+ 
+    .container>div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        mix-blend-mode: normal;
+    }
+ 
+    .title {
+        color: #333;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+    }
+ 
+    .pic_box {
+        width: 760px;
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 100px auto;
+    }
+ 
+    .pic {
+        width: 300px;
+        height: 200px;
+        margin: 30px;
+        background: url('https://user-images.githubusercontent.com/8554143/34238564-52f2ceb6-e63d-11e7-9812-dd987f98e9da.png'),
+        linear-gradient(#f00, #00f);
+        background-size: cover, 100% 100%;
+        background-position: 0 0, -300px 0;
+        background-blend-mode: luminosity;
+        background-repeat: no-repeat;
+        transition: .5s background-position;
+        cursor: pointer;
+    }
+ 
+    .pic1 {
+        background-image: url('https://user-images.githubusercontent.com/8554143/34238564-52f2ceb6-e63d-11e7-9812-dd987f98e9da.png'),
+        linear-gradient(90deg, #ff5722, #03a9f4);
+    }
+ 
+    .pic2 {
+        background-image: url('https://user-images.githubusercontent.com/8554143/34238564-52f2ceb6-e63d-11e7-9812-dd987f98e9da.png'),
+        linear-gradient(-180deg, #00bcd4, #fa1a09);
+    }
+ 
+    .pic3 {
+        background-image: url('https://user-images.githubusercontent.com/8554143/34238564-52f2ceb6-e63d-11e7-9812-dd987f98e9da.png'),
+        linear-gradient(45deg, #ffc107, #3f51b5, #4caf50, #ff0057, #fae105, #5c00ff);
+    }
+ 
+    .pic:hover {
+        background-position: 0 0, 0 0;
+    }
+</style>
+ 
+<body>
+    <h1 class="title">Background-Blend-Mode:
+        <select id="select">
+            <option value="normal">normal -- 正常</option>
+            <option value="multiply">multiply -- 正片叠底</option>
+            <option value="screen">screen -- 滤色</option>
+            <option value="overlay">overlay -- 叠加</option>
+            <option value="darken">darken -- 变暗</option>
+            <option value="lighten">lighten -- 变亮</option>
+            <option value="color-dodge">color-dodge -- 颜色减淡</option>
+            <option value="color-burn">color-burn -- 颜色加深</option>
+            <option value="hard-light">hard-light -- 强光</option>
+            <option value="soft-light">soft-light -- 柔光</option>
+            <option value="difference">difference -- 差值</option>
+            <option value="exclusion">exclusion -- 排除</option>
+            <option value="hue">hue -- 色相</option>
+            <option value="saturation">saturation -- 饱和度</option>
+            <option value="color">color -- 颜色</option>
+            <option value="luminosity">luminosity -- 亮度</option>
+        </select>
+    </h1>
+    <div class="pic_box">
+        <div class="pic"></div>
+        <div class="pic pic1"></div>
+        <div class="pic pic2"></div>
+        <div class="pic pic3"></div>
+    </div>
+   
+    <script>
+ 
+        let select = document.getElementById('select');
+        let mode = document.getElementsByClassName("pic");
+        let value;
+        select.addEventListener('click', changeEvent);
+        function changeEvent() {
+            value = select.value;
+            for (let item of mode) {
+                item.style.cssText = 'background-blend-mode:' + value
+            }
+        };
+    </script>
+</body>
+ 
+</html>

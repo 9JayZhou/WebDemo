@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3混合模式</title>
+    <style>
+    .box{
+        width: 100%;
+        height: 300px;
+    }
+    .img{
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        /* 混合模式 */
+        mix-blend-mode: darken; 
+    }
+    .boximg1{
+        isolation: initial
+    }
+
+   .pic {
+        width: 300px;
+        height: 200px;
+        margin: 30px;
+        /* 背景颜色的位置 */
+        background-size: cover, 100% 100%;
+        background-position: 0 0, 0 0;
+        /* 背景混合模式 */
+        background-blend-mode:  lighten;
+        background-repeat: no-repeat;
+    }
+  .boximg3{
+    background-image: url('https://user-images.githubusercontent.com/8554143/34238564-52f2ceb6-e63d-11e7-9812-dd987f98e9da.png'),
+    /* 线性渐变 */
+    linear-gradient(45deg,pink,#b4b4b4,orange);
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>CSS3混合模式</h1>
+        <div class="boximg1 img">
+                <img src="./wenjain/01.jpg"  alt="">
+        </div>
+        <div class="boximg2 img">
+                <img src="./wenjain/02.jpg" width="300" height="200" alt="">
+        </div>
+    </div>
+    <div class="boximg3 pic"></div>
+</body>
+<!-- 混合油三种模式
+    作用 : 作用是让元素内容和这个元素的背景以及下面的元素发生“混合” (相互重叠的元素发生变化)
+           mix-blend-mode   元素混合模式
+           background-blend-mode  背景混合模式 (取值和元素混合模式一样)
+           isolation    独立隔离模式
+-->
+<!-- 
+mix-blend-mode: normal;          //正常
+mix-blend-mode: multiply;        //正片叠底
+mix-blend-mode: screen;          //滤色
+mix-blend-mode: overlay;         //叠加
+mix-blend-mode: darken;          //变暗
+mix-blend-mode: lighten;         //变亮
+mix-blend-mode: color-dodge;     //颜色减淡
+mix-blend-mode: color-burn;      //颜色加深
+mix-blend-mode: hard-light;      //强光
+mix-blend-mode: soft-light;      //柔光
+mix-blend-mode: difference;      //差值
+mix-blend-mode: exclusion;       //排除
+mix-blend-mode: hue;             //色相
+mix-blend-mode: saturation;      //饱和度
+mix-blend-mode: color;           //颜色
+mix-blend-mode: luminosity;      //亮度
+
+mix-blend-mode: initial;         //初始
+mix-blend-mode: inherit;         //继承
+mix-blend-mode: unset;           //复原
+
+ -->
+
+ <!-- 
+   isolation: initial            //隔离图层
+
+  -->
+</html>
